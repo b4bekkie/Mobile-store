@@ -8,6 +8,8 @@ var app = require('../app');
 var debug = require('debug')('mobilestore:server');
 var http = require('http');
 
+var {db} = require('../models/index.js')
+
 /**
  * Get port from environment and store in Express.
  */
@@ -80,7 +82,7 @@ function onError(error) {
 /**
  * Event listener for HTTP server "listening" event.
  */
-
+db.sequelize.sync({alter : true}).then(()=> console.log('db connected')).catch((e)=> console.log(e.message))
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
