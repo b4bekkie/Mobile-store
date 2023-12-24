@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const roleRouter = require('./routers/roleRouter')
+
 
 var app = express();
 
@@ -16,6 +18,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use('/api/role',roleRouter)
 
 
 // catch 404 and forward to error handler
