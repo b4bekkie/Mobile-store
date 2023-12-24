@@ -3,7 +3,7 @@ const { v4: uuidV4 } = require('uuid');
 
 module.exports = {
 
-    createUser  : async(body) => {
+    createRole  : async(body) => {
 
         try {
             const roleId = uuidV4()
