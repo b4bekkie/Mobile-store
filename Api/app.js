@@ -6,6 +6,8 @@ var logger = require('morgan');
 
 const roleRouter = require('./routers/roleRouter')
 
+const authRouter = require('./routers/authRouter')
+
 
 var app = express();
 
@@ -21,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/api/role',roleRouter)
+app.use('/api/auth',authRouter)
 
 
 // catch 404 and forward to error handler

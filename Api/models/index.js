@@ -8,8 +8,8 @@ const User = require('./definition/user')
 const models = {Role,User}
 const db = {};
 
-Role.hasMany(User,{foreignKey : " roleId"})
-User.belongsTo(Role,{foreignKey : " roleId"})
+Role.hasMany(User,{foreignKey : "roleId"})
+User.belongsTo(Role,{foreignKey : "roleId"})
 
 
 db.sequelize = sequelize;
